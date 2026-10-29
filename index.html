@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nadia Bakery | Fresh Bread, Cakes & Ice Cream - Benin City</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; color: #333; background: #fffaf5; }
+
+        header { background: linear-gradient(135deg, #8B4513, #D2691E); color: white; padding: 1rem 5%; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .logo { font-size: 1.6rem; font-weight: 700; }
+        .nav-links { display: flex; gap: 1.5rem; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 500; }
+        .nav-links a:hover { opacity: 0.85; }
+
+        .hero { background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1600') center/cover no-repeat; color: white; text-align: center; padding: 7rem 1.5rem; }
+        .hero h1 { font-size: 3rem; margin-bottom: 0.8rem; }
+        .hero p { font-size: 1.3rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        .btn { display: inline-block; background: #D2691E; color: white; padding: 0.9rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; margin: 0.4rem; transition: 0.3s; }
+        .btn:hover { background: #b35915; transform: translateY(-2px); }
+        .btn-whatsapp { background: #25D366; }
+        .btn-whatsapp:hover { background: #1da851; }
+
+        section { padding: 4.5rem 5%; max-width: 1200px; margin: 0 auto; }
+        h2 { text-align: center; font-size: 2.2rem; color: #8B4513; margin-bottom: 2.5rem; }
+        h2::after { content: ''; display: block; width: 70px; height: 4px; background: #D2691E; margin: 0.6rem auto 0; border-radius: 2px; }
+
+        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .product-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.08); transition: 0.3s; }
+        .product-card:hover { transform: translateY(-8px); }
+        .product-img { height: 220px; background-size: cover; background-position: center; }
+        .product-info { padding: 1.5rem; }
+        .product-info h3 { color: #8B4513; margin-bottom: 0.6rem; }
+
+        /* New Sections */
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .info-card { background: white; padding: 1.8rem; border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .info-card h3 { color: #8B4513; margin-bottom: 1rem; }
+
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .review-card { background: white; padding: 1.5rem; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .stars { color: #f4a261; margin-bottom: 0.5rem; }
+
+        .map-container { border-radius: 16px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.1); margin-top: 1.5rem; }
+        .map-container iframe { width: 100%; height: 350px; border: 0; }
+
+        .contact-box { background: white; border-radius: 20px; padding: 2.5rem; box-shadow: 0 8px 30px rgba(0,0,0,0.08); text-align: center; max-width: 700px; margin: 0 auto; }
+
+        /* Floating WhatsApp Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 999;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .floating-whatsapp:hover { transform: scale(1.1); background: #1da851; }
+
+        footer { background: #3d2314; color: #f5e6d3; text-align: center; padding: 2rem; margin-top: 3rem; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .about-content { grid-template-columns: 1fr; }
+            .nav-links { gap: 1rem; font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Nadia Bakery</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#products">Products</a>
+                <a href="menu.html">Full Menu</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Nadia Bakery</h1>
+        <p>Fresh Bread • Delicious Cakes • Ice Cream • Pastries<br>
+        The centre of bread and stomach satisfaction in Benin City</p>
+        <a href="https://wa.me/2348155707909" class="btn btn-whatsapp" target="_blank">Order on WhatsApp</a>
+        <a href="tel:+2348155707909" class="btn">Call Us Now</a>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <div>
+                <p><strong>Nadia Bakery</strong> prepares the best bread, food and ice cream for our customers’ satisfaction.</p>
+                <p>Located right opposite the University of Benin (UNIBEN) Main Gate, we are a favourite spot for students, families and everyone who loves fresh, oven-baked goodness.</p>
+            </div>
+            <div style="background:#f8e9d9; height:280px; border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:5rem;">🍞🍰🍦</div>
+        </div>
+    </section>
+
+    <!-- Opening Hours + Delivery -->
+    <section>
+        <h2>Hours & Delivery</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>🕐 Opening Hours</h3>
+                <p><strong>Monday – Saturday:</strong> 8:00 AM – 9:00 PM</p>
+                <p><strong>Sunday:</strong> 9:00 AM – 9:00 PM</p>
+                <p style="margin-top:1rem; color:#666;">We bake fresh every day!</p>
+            </div>
+            <div class="info-card">
+                <h3>🛵 Delivery Information</h3>
+                <p>We deliver around <strong>Ugbowo, UNIBEN campus and nearby areas</strong>.</p>
+                <p style="margin-top:0.8rem;">Call or WhatsApp us to confirm delivery fee and availability.</p>
+                <p style="margin-top:1rem;"><strong>Phone:</strong> 0815 570 7909</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products">
+        <h2>What We Bake</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=800');"></div>
+                <div class="product-info"><h3>Fresh Bread</h3><p>Fruit, cinnamon, chocolate, coconut, sardine bread and more – always oven fresh.</p></div>
+            </div>
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800');"></div>
+                <div class="product-info"><h3>Cakes</h3><p>Birthday cakes, mixed cakes, white forest, chocolate cakes and special occasion cakes.</p></div>
+            </div>
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800');"></div>
+                <div class="product-info"><h3>Pastries & Snacks</h3><p>Pies, doughnuts, rolls, meat pies and other tasty snacks.</p></div>
+            </div>
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1497034821262-6f073dd97139?w=800');"></div>
+                <div class="product-info"><h3>Ice Cream</h3><p>Delicious ice cream in different flavours.</p></div>
+            </div>
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800');"></div>
+                <div class="product-info"><h3>Pizza</h3><p>Hot and delicious pizza in different sizes.</p></div>
+            </div>
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800');"></div>
+                <div class="product-info"><h3>Shawarma & Burgers</h3><p>Tasty shawarma, burgers and quick bites.</p></div>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:2.5rem;">
+            <a href="menu.html" class="btn">See Full Menu →</a>
+        </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section>
+        <h2>What Customers Say</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Best bread near UNIBEN! Always fresh and the chocolate bread is my favourite."</p>
+                <p style="margin-top:0.8rem; font-weight:600;">– Chioma, UNIBEN Student</p>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"I ordered a birthday cake and it was perfect. Delivery was also fast."</p>
+                <p style="margin-top:0.8rem; font-weight:600;">– Emeka</p>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★☆</div>
+                <p>"Great place for snacks and ice cream after lectures. Highly recommend!"</p>
+                <p style="margin-top:0.8rem; font-weight:600;">– Blessing</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location + Map -->
+    <section id="contact">
+        <h2>Find Us</h2>
+        <div class="contact-box">
+            <p><strong>📍 Location</strong><br>
+            Opposite UNIBEN Main Gate,<br>
+            Along Benin-Lagos Express Road,<br>
+            Ugbowo, Benin City, Edo State</p>
+
+            <p style="margin-top:1.2rem;"><strong>📞 Phone:</strong> <a href="tel:+2348155707909" style="color:#D2691E; font-weight:600;">0815 570 7909</a></p>
+            <p><strong>📧 Email:</strong> nadiabakerybenin@gmail.com</p>
+
+            <div class="map-container">
+                <!-- Google Map Embed -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.123456789!2d5.603!3d6.400!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMjQnMDAuMCJOIDXCsDM2JzEwLjgiRQ!5e0!3m2!1sen!2sng!4v1710000000000" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <a href="https://wa.me/2348155707909?text=Hello%20Nadia%20Bakery%2C%20I%20want%20to%20place%20an%20order" class="btn btn-whatsapp" style="margin-top:1.8rem;" target="_blank">
+                💬 Chat on WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Nadia Bakery • Benin City</p>
+        <p style="margin-top:0.5rem; font-size:0.9rem;">Freshly baked with love every day</p>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/2348155707909" class="floating-whatsapp" target="_blank" title="Chat with us">
+        💬
+    </a>
+
+</body>
+</html>
